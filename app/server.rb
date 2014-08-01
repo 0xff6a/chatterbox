@@ -9,6 +9,9 @@ require_relative 'models/user'
 require_relative 'models/mailer'
 require_relative 'models/reply'
 
+require_relative 'controllers/application'
+require_relative 'controllers/users'
+
 require_relative 'datamapper_setup'
 
 enable :sessions

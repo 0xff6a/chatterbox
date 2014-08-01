@@ -2,7 +2,7 @@ describe Hoot do
 	
 	before(:each) { create_test_user }
 
-	it 'should be created with content' do
+	it 'can be created with content' do
 		Hoot.create(:content => 'Hello', :user_id => user.id)
 		expect(Hoot.count).to eq(1)
 		expect(hoot.content).to eq('Hello')

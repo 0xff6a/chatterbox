@@ -3,4 +3,4 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/chatterbox_#{env}")
 
 DataMapper.finalize
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!
