@@ -6,6 +6,7 @@ require 'rest-client'
 
 require_relative 'models/hoot'
 require_relative 'models/user'
+require_relative 'models/mailer'
 
 require_relative 'datamapper_setup'
 
