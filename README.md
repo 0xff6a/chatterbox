@@ -2,6 +2,7 @@ Week 6 Challenge @ Makers Academy
 =================================
 
 Challenge:
+----------
 
 We are going to write a little Twitter clone that will allow the users to post messages to a public stream.
 
