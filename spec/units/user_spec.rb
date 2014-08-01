@@ -1,4 +1,4 @@
-require_relative 'helpers/general'
+require './spec/helpers/general'
 
 describe User do
 
