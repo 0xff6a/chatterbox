@@ -116,7 +116,7 @@ header.container-header {
 
 div.container {
 	background-color: #EEE;
-	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	margin-right: 100px;
 	padding: 15px 10px;
   padding-top: 3px;
