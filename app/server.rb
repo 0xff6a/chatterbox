@@ -8,6 +8,8 @@ require_relative 'models/hoot'
 require_relative 'models/user'
 require_relative 'models/mailer'
 require_relative 'models/reply'
+require_relative 'helpers/application'
+require_relative 'helpers/users'
 
 require_relative 'controllers/application'
 require_relative 'controllers/users'
