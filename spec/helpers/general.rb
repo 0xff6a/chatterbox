@@ -46,3 +46,9 @@ def set_new_password(token)
 		fill_in 'new_password_confirmation', :with => 'new'
 		click_button 'Reset'
 end
+
+def hoot(content)
+	click_on 'Hoot'
+	fill_in 'content', :with => content
+	click_on 'Hoot Away'
+end

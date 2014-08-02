@@ -3,9 +3,7 @@ get '/hoots/new' do
 end
 
 post '/hoots' do
-	hoot = Hoot.create(	:content 		=> params[:content], 
-											:timestamp 	=> Time.now,
-											:user_id		=> current_user.id)
+	hoot = create_hoot(params[:content])
 	redirect to('/') if hoot.save
 	flash.now[:errors] = hoot.errors.full_messages
 	erb :'hoots/new'
