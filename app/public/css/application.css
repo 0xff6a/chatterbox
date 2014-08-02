@@ -22,7 +22,7 @@ div.wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -90px;
+  margin: 0 auto -70px;
 }
 
 a {
@@ -215,5 +215,5 @@ footer p {
 }
 
   div.footer, div.push {
-    height: 90px;
+    height: 70px;
   }

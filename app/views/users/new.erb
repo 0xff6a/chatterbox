@@ -1,9 +1,11 @@
-<div class='container'>
+<div id='sign-up-form' class='container'>
 	<header class='container-header'>Please sign up</header>
 	<form class='standard' action='/users' method='post'>
-		Email:<input name='email' type ='text' value"<%= @user.email %>">
-		Password:<input name='password' type='password'>
-		Confirm Password: <input name='password_confirmation' type='password'>
+		Name:<input name='name' type='text' placeholder='Name'>
+		Username:<input name='username' type='text' placeholder='Username'>
+		Email:<input name='email' type ='text' placeholder='Email'>
+		Password:<input name='password' type='password' placeholder='Password'>
+		Confirm Password: <input name='password_confirmation' type='password' placeholder='Password'>
 		<input class='button green' type='submit' value='Sign Up'>
 	</form>
 </div>
