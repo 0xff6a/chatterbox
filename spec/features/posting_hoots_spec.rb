@@ -15,4 +15,11 @@ feature 'Posting hoots' do
 		expect(page).to have_content('Yay coding')
 	end
 	
+	scenario 'without content' do
+		click_on 'Hoot'
+		fill_in 'content', :with => ''
+		click_on 'Hoot Away'
+		expect(Hoot.count).to eq(0)
+		expect(page).to have_content('You must hoot something')
+	end
 end

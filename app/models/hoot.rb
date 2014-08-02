@@ -8,7 +8,7 @@ class Hoot
 
 	property 	:id, 				Serial
 	property 	:content, 	Text, :required => true, 
-															:message => 'Your hoot must have content'
+															:message => 'You must hoot something'
 	property 	:timestamp, String
 
 end
