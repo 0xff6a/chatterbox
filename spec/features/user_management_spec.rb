@@ -47,3 +47,16 @@ feature 'User signs in' do
 	end
 
 end
+
+feature 'Users signs out' do
+	before(:each) { create_test_user }
+
+	scenario 'while being logged in' do
+		sign_in('test', 'password')
+		visit ('/')
+		click_on 'Sign Out'
+		expect(page).to have_content('Goodbye')
+		expect(page).not_to have_content('Welcome, test')
+	end
+
+end
