@@ -80,4 +80,16 @@ feature 'User forgets their password' do
 		expect(page).to have_content('Your username was not recognised')
 	end
 
+	scenario 'resetting the password' do
+		user.update(:password_token => 'test', :password_token_timestamp => Time.now)
+		set_new_password('test')
+		expect(User.authenticate('test', 'new')).not_to be nil
+	end
+
+	scenario 'trying to reset the password with an invalid token' do
+		user.update(:password_token => "test", :password_token_timestamp => Time.now)
+		visit '/users/reset_password/not_the_right_token'
+		expect(page).to have_content("Invalid Token")
+	end
+
 end

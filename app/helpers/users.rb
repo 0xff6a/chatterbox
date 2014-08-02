@@ -11,9 +11,9 @@ helpers do
 	end
 
 	def set_new_password_for(user, new_password, new_password_confirmation)
-		user.update(:password => new_password,
-								:password_confirmation => new_password_confirmation,
-								:password_token => nil,
+		user.update(:password 								=> new_password,
+								:password_confirmation 		=> new_password_confirmation,
+								:password_token 					=> nil,
 								:password_token_timestamp => nil)
 	end
 

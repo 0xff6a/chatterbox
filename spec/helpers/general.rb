@@ -35,3 +35,10 @@ def request_password_reset_for(username)
 		fill_in 'username', :with => username
 		click_button('Reset')
 end
+
+def set_new_password(token)
+		visit "/users/reset_password/#{token}"
+		fill_in 'new_password', :with => 'new'
+		fill_in 'new_password_confirmation', :with => 'new'
+		click_button 'Reset'
+end
