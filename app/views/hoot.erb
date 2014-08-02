@@ -1,0 +1,16 @@
+<li class='hoot'>	
+	<div class='star-holder'>
+		<form class='favouriting' method='post' action='/users/favourites'>
+			<input type='hidden' name='hoot_id' value=<%=hoot.id %>>
+		  <button id='fav' class='favouriting-button' name='favourite' type='submit' >
+		  	<img src='http://imgur.com/I0EwG.png' />
+		  </button>
+		  <div> Reply.count(:hoot => hoot) adds</div>
+		</form>
+	</div>
+	<div class='description'><%= hoot.content %></div>
+	<span class='source'>
+		<%= Time.parse(hoot.timestamp).strftime("added at %I:%M%p on %d-%B-%Y by ") %> 
+		<a href='#'><%= User.first(:id => hoot.user_id).email if User.first(:id => hoot.user_id)%></a>
+	</span>
+</li>

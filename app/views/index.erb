@@ -1,7 +1,9 @@
 <div class='container'>
 	<header class='container-header'>&#9608Hoots</header>
 	<ul>
-
+		<% @hoots.each do |hoot| %>
+			<%= partial :hoot, :locals => {:hoot => hoot} %>
+		<% end %>
 	</ul>
 </div>
 

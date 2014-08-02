@@ -31,17 +31,15 @@ end
 
 feature 'User signs in' do
 
-	before(:each) { create_test_user }
+	before(:each) { create_test_user; visit ('/') }
 
 	scenario 'with correct credentials' do
-		visit ('/')
 		expect(page).not_to have_content('Welcome, test')
-		sign_in('test', 'password')
+		sign_in_test_user
 		expect(page).to have_content('Welcome, test')
 	end
 
 	scenario 'with incorrect credentials' do
-		visit ('/')
 		sign_in('test', 'wrong password')
 		expect(page).to have_content('Invalid credentials')
 	end
@@ -53,7 +51,7 @@ feature 'Users signs out' do
 	before(:each) { create_test_user }
 
 	scenario 'while being logged in' do
-		sign_in('test', 'password')
+		sign_in_test_user
 		visit ('/')
 		click_on 'Sign Out'
 		expect(page).to have_content('Goodbye')

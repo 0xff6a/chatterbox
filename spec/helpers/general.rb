@@ -29,6 +29,10 @@ def sign_in(username, password)
 	click_button 'Sign In'
 end
 
+def sign_in_test_user
+	sign_in('test', 'password')
+end
+
 def request_password_reset_for(username)
 		visit '/sessions/new'
 		click_link('Forgotten password?')

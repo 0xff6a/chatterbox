@@ -14,6 +14,7 @@ require_relative 'helpers/users'
 require_relative 'controllers/application'
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
+require_relative 'controllers/hoots'
 
 require_relative 'datamapper_setup'
 
