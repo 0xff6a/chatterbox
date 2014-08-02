@@ -9,11 +9,7 @@ post '/users' do
 											:email => params[:email],
 											:password => params[:password],
 											:password_confirmation => params[:password_confirmation])
-	if @user.save
-		onboard(@user)
-	else
-		retry_signup_for(@user)
-	end
+	@user.save ? onboard(@user) : retry_signup_for(@user)
 end
 
 get '/users/forgotten_password' do
@@ -22,15 +18,19 @@ end
 
 post '/users/reset_password' do
 	user = User.first(:username => params[:username])
-	if user
-		save_token_for(user)
-		send_password_reset_message_to(user)
-		flash[:notice] =['Password reset, please check your email']
-		redirect to('/')
-	else
-		flash[:errors] = ['Your username was not recognised']
-		erb :'users/forgotten_password'
-	end
+	user ? start_reset_process_for(user) : retry_password_reset
+end
+
+def start_reset_process_for(user)
+	save_token_for(user)
+	send_password_reset_message_to(user)
+	flash[:notice] ='Password reset, please check your email'
+	redirect to('/')
+end
+
+def retry_password_reset
+	flash[:errors] = ['Your username was not recognised']
+	erb :'users/forgotten_password'
 end
 
 def onboard(user)
