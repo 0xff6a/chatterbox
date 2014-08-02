@@ -4,7 +4,7 @@
 
 form.standard {
   text-align: left;
-  background-color: #00ccff;
+  background-color: #b4e9ff;
   padding: 2px 10px;
   margin-bottom: 5px;
 }
@@ -115,7 +115,7 @@ header.container-header {
 }
 
 div.container {
-	background-color: #EEE;
+	background-color: white;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	margin-right: 100px;
 	padding: 15px 10px;
@@ -141,25 +141,25 @@ div.star-holder:hover{
     background-color: red;
   }
 
-li.link {
-  background-color: #EEE; 
+li.hoot {
+  background-color: #b4e9ff; 
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   margin: 10px inherit;
   padding: 15px 10px;
 }
 
-li.link a.title {
+li.hoot a.title {
   letter-spacing: 1px;
   font-size: 14pt;
 }
 
-li.link div.description {
+li.hoot div.description {
   margin: 10px inherit;
   font-family: Arial;
   font-size: 12pt;
 }
 
-li.link span.source {
+li.hoot span.source {
   float: left; 
   font-size: 12px;
 }
@@ -181,7 +181,7 @@ div.flash-notice, li.flash-error {
   color: white;
 }
 
-p.new-link-field{
+p.new-hoot-field{
   padding: 2px;
 }
 

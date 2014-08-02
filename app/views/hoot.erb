@@ -10,7 +10,6 @@
 	</div>
 	<div class='description'><%= hoot.content %></div>
 	<span class='source'>
-		<%= Time.parse(hoot.timestamp).strftime("added at %I:%M%p on %d-%B-%Y by ") %> 
-		<a href='#'><%= User.first(:id => hoot.user_id).email if User.first(:id => hoot.user_id)%></a>
+		<%= Time.parse(hoot.timestamp).strftime("added at %I:%M%p on %d-%B-%Y by ") %> <%= "#{User.first(:id => hoot.user_id).name} | #{User.first(:id => hoot.user_id).username}" %>
 	</span>
 </li>
