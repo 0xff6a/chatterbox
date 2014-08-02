@@ -21,3 +21,11 @@ def sign_up(name, username, email, password, password_confirmation)
 		click_on 'Sign Up'
 	end
 end
+
+def sign_in(username, password)
+	visit '/sessions/new'
+	fill_in 'username', :with => username
+	fill_in 'password', :with => password
+	click_button 'Sign In'
+end
+

@@ -28,3 +28,22 @@ feature 'User signs up' do
 	end
 
 end
+
+feature 'User signs in' do
+
+	before(:each) { create_test_user }
+
+	scenario 'with correct credentials' do
+		visit ('/')
+		expect(page).not_to have_content('Welcome, test')
+		sign_in('test', 'password')
+		expect(page).to have_content('Welcome, test')
+	end
+
+	scenario 'with incorrect credentials' do
+		visit ('/')
+		sign_in('test', 'wrong password')
+		expect(page).to have_content('Invalid credentials')
+	end
+
+end
