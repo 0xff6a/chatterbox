@@ -29,3 +29,9 @@ def sign_in(username, password)
 	click_button 'Sign In'
 end
 
+def request_password_reset_for(username)
+		visit '/sessions/new'
+		click_link('Forgotten password?')
+		fill_in 'username', :with => username
+		click_button('Reset')
+end

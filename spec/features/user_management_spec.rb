@@ -49,6 +49,7 @@ feature 'User signs in' do
 end
 
 feature 'Users signs out' do
+	
 	before(:each) { create_test_user }
 
 	scenario 'while being logged in' do
@@ -57,6 +58,26 @@ feature 'Users signs out' do
 		click_on 'Sign Out'
 		expect(page).to have_content('Goodbye')
 		expect(page).not_to have_content('Welcome, test')
+	end
+
+end
+
+feature 'User forgets their password' do
+	 
+	before(:each) { create_test_user }
+
+	scenario 'requesting a password reset' do
+		expect(user.password_token && user.password_token_timestamp).to be nil
+		expect(Mailer).to receive(:send_message)
+		request_password_reset_for('test')
+		expect(user.password_token && user.password_token_timestamp).not_to be nil
+		expect(page).to have_content('Password reset, please check your email')
+	end
+
+	scenario 'requesting a reset with incorrect username' do
+		expect(Mailer).not_to receive(:send_message)
+		request_password_reset_for('not a user')
+		expect(page).to have_content('Your username was not recognised')
 	end
 
 end

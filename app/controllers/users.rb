@@ -16,6 +16,23 @@ post '/users' do
 	end
 end
 
+get '/users/forgotten_password' do
+	erb :'users/forgotten_password'
+end
+
+post '/users/reset_password' do
+	user = User.first(:username => params[:username])
+	if user
+		save_token_for(user)
+		send_password_reset_message_to(user)
+		flash[:notice] =['Password reset, please check your email']
+		redirect to('/')
+	else
+		flash[:errors] = ['Your username was not recognised']
+		erb :'users/forgotten_password'
+	end
+end
+
 def onboard(user)
 	session[:user_id] = user.id
 	send_welcome_message_to(user)

@@ -1,8 +1,8 @@
 helpers do
 
 	def send_welcome_message_to(user)
-		Mailer.send_message(user.email, "Welcome to the Bookmark Manager", 
-		"Hey Good Lookin',\n\nWelcome to the bookmark manager.\n\nAll the best,\n\nThe Team")
+		Mailer.send_message(user.email, "Welcome to Chatterbox", 
+		"Hey Good Lookin',\n\nWelcome to the Chatterbox. Get hootin'\n\nAll the best,\n\nThe Team")
 	end
 
 	def send_password_reset_message_to(user)
