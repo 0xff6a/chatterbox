@@ -1,9 +1,9 @@
 <li class='hoot'>	
 	<div class='star-holder'>
-		<form class='favouriting' method='post' action='/users/favourites'>
+		<form class='replying' method='post' action='/hoots/reply'>
 			<input type='hidden' name='hoot_id' value=<%=hoot.id %>>
-		  <button id='fav' class='favouriting-button' name='favourite' type='submit' >
-		  	<img src='http://imgur.com/I0EwG.png' />
+		  <button id='fav' class='replying-button' name='favourite' type='submit' >
+		  	<img src='http://i.imgur.com/JJ3TOHT.gif' />
 		  </button>
 		  <div> Reply.count(:hoot => hoot) adds</div>
 		</form>

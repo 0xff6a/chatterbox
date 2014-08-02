@@ -1,4 +1,4 @@
-require './spec/helpers/general'
+require 'helpers/general'
 
 feature 'Posting hoots' do 
 

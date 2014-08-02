@@ -37,7 +37,7 @@ a.button.highlighted {
 	background-color: #ffd83d;
 }
 
-button.favouriting-button {
+button.replying-button {
   padding: 1px;
 }
 
@@ -127,6 +127,8 @@ div.container {
 
 div.star-holder img{
    cursor: pointer;
+   width: 50px;
+  height: auto;
 }
 
 div.star-holder{

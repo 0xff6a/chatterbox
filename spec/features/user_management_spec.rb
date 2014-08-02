@@ -1,4 +1,4 @@
-require './spec/helpers/general'
+require 'helpers/general'
 
 feature 'User signs up' do
 
@@ -52,7 +52,6 @@ feature 'Users signs out' do
 
 	scenario 'while being logged in' do
 		sign_in_test_user
-		visit ('/')
 		click_on 'Sign Out'
 		expect(page).to have_content('Goodbye')
 		expect(page).not_to have_content('Welcome, test')
