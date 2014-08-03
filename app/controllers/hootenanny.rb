@@ -1,5 +1,5 @@
 get '/users/hoots' do
 	@hoots = current_user.hoots
-	@replies = current_user.replies
+	@replies = replies.all
 	erb :'users/hoots'
 end
