@@ -4,7 +4,7 @@
 		<header class='container-header'>&#9608Hoot Daddy</header>
 		<ul>
 				<%= partial :hoot, :locals => {:hoot => hoot} %>
-				<div id=class='container hoot-em-backs'>
+				<div class='container hoot-em-backs'>
 					<header class='container-header'>&#9608Hoot 'Em Backs</header>
 					<ul>
 						<% relevant_replies = @replies.all(:hoot => hoot) %>

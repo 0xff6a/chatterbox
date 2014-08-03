@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>&#9608ChatterBOX</title>
+		<link rel="stylesheet" type="text/css" href="/css/reset.css"> 
+	  <link rel="stylesheet" type="text/css" href="/css/application.css">  
+	</head>
+	<body>
+		<div class='wrapper'>
+			<header>
+	<a id='logo' href='/'> &#9608ChatterBOX</a>
+	<div id='user-links'>
+		
+			<span id='welcome-message'>
+				Welcome, test@test.com
+			</span>
+			<a href='/users/hoots' id='profile-button' class='button highlighted'>Hootenannies</a>
+			<a href='/hoots/new' id='add-link' class='button highlighted'>Hoot</a>
+			<form id='sign-out' method='post' action='/sessions'>
+				<input type='hidden' name='_method' value='delete'>
+				<input id='sign-out-button' class='button' type='submit' value='Sign Out'>
+			</form>
+			
+	</div>
+</header>
+			
+		  
+	<div class='container hoot-daddy'>
+		<header class='container-header'>&#9608Hoot Daddy</header>
+		<ul>
+				<li class='hoot'>	
+	<div class='star-holder'>
+		<form class='replying' method='post' action='/hoots/reply'>
+			<input type='hidden' name='hoot_id' value=4>
+		  <button id='reply' class='replying-button' name='favourite' type='submit' >
+		  	<img src='http://i.imgur.com/JJ3TOHT.gif' />
+		  </button>
+		  <div> 1 Hoot 'Em Backs</div>
+		</form>
+	</div>
+	<div class='description'>test hoot</div>
+	<span class='source'>
+		added at 03:00PM on 03-August-2014 by  test name | test
+	</span>
+</li>
+
+				<div class='container hoot-em-backs'>
+					<header class='container-header'>&#9608Hoot 'Em Backs</header>
+					<ul>
+						
+						
+							<li class='hoot'>	
+	<div class='description'>reply</div>
+	<span class='source'>
+		added at 03:00PM on 03-August-2014 by  test name | test
+	</span>
+</li>
+
+						
+					</ul>
+				</div>
+		</ul>
+	</div>
+
+
+		 <div class='push'></div>
+		</div>
+		<div class='footer'>
+			<footer>
+	<div id='makersacademy-logo'>
+		<a href='http://www.makersacademy.com'>
+			<img id='makers-logo-img' src='http://www.makersacademy.com/images/logo-two-lines.png'>
+		</a>
+	</div>
+	<div id='technologies'>
+		<p><a class='title' href="http://www.makersacademy.com">
+			I built this page at Makers Academy, a highly selective 12 week coding course in London.</a>
+		</p>
+		<p> This website is built using Ruby, Sinatra, Rspec, Capybara, HTML and CSS
+		</p>
+	</div>
+</footer>
+		</div>
+	</body>
+</html>

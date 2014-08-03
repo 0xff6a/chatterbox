@@ -27,13 +27,13 @@ feature 'Replying to hoots' do
 
 		visit('/')
 		click_on 'profile-button'
-		
-		within '#hoot-daddy' do
+
+		within 'div.hoot-daddy' do
 			expect(page).to have_content('Hoot Daddy')
 			expect(page).to have_content('test hoot')
 		end
 
-		within '#hoot-em-backs' do
+		within 'div.hoot-em-backs' do
 			expect(page).to have_content("Hoot 'Em Backs")
 			expect(page).to have_content('reply')
 		end

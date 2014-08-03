@@ -114,6 +114,7 @@ header.container-header {
   margin-bottom: 10px;
 }
 
+
 div.container {
 	background-color: white;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -123,6 +124,11 @@ div.container {
 	margin-left: 100px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+div.hoot-em-backs {
+  margin-right: 0px;
+  background-color: slategray;
 }
 
 div.star-holder img{
