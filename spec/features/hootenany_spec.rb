@@ -9,35 +9,29 @@ feature 'Replying to hoots' do
 	end
 	
 	scenario 'while browsing the home page' do
-		visit('/')
-		click_button 'reply'
-		expect(page).to have_content("Hoot 'Em Backs")
-		fill_in 'content', :with => 'reply'
-		click_on "Hoot 'Em Back"
+		hoot_em_back('reply')
 		expect(user.replies.count).to eq(1)
 		expect(user.replies.first.content).to eq('reply')
 	end
 
+	scenario 'with no content' do
+		hoot_em_back('')
+		expect(page).to have_content('You must hoot em back with something')
+	end
+
 	scenario 'navigating to the hootenannies page' do
-		visit('/')
-		click_button 'reply'
-		expect(page).to have_content("Hoot 'Em Backs")
-		fill_in 'content', :with => 'reply'
-		click_on "Hoot 'Em Back"
-
-		visit('/')
+		hoot_em_back('reply')
 		click_on 'profile-button'
-
+		
 		within 'div.hoot-daddy' do
 			expect(page).to have_content('Hoot Daddy')
 			expect(page).to have_content('test hoot')
 		end
-
+		
 		within 'div.hoot-em-backs' do
 			expect(page).to have_content("Hoot 'Em Backs")
 			expect(page).to have_content('reply')
 		end
-
 	end
 
 end

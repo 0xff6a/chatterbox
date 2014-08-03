@@ -52,3 +52,10 @@ def hoot(content)
 	fill_in 'content', :with => content
 	click_on 'Hoot Away'
 end
+
+def hoot_em_back(content)
+	visit('/')
+	click_button 'reply'
+	fill_in 'content', :with => content
+	click_on "Hoot 'Em Back"
+end
