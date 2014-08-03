@@ -11,7 +11,7 @@ end
 
 post '/hoots/reply' do
 	@hoot = Hoot.first(:id => params[:hoot_id])
-	@replies = @hoot.replies.all(:order => [ :timestamp.desc ])
+	@replies = @hoot.replies.all
 	erb :'hoots/reply'
 end
 
@@ -23,7 +23,7 @@ post '/hoots/reply/new' do
 												:timestamp => Time.now)
 	if reply.save
 		flash[:notice] ='You joined the Hootenany'
-		redirect('/')
+		redirect to('/users/hoots')
 	else
 		flash[:errors] = reply.errors.full_messages
 		erb :'hoots/new'

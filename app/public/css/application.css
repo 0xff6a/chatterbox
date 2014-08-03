@@ -11,7 +11,7 @@ form.standard {
 
 body {
   background-color: #67d2ff;
-  font-family: Arial;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
 
 html, body {
@@ -29,8 +29,8 @@ a {
 	text-decoration: none;
 }
 
-input.url-input{
-  width: 200px;
+input.hoot-input{
+  width: 400px;
 }
 
 a.button.highlighted {
@@ -133,7 +133,7 @@ div.hoot-em-backs {
 
 div.star-holder img{
    cursor: pointer;
-   width: 50px;
+   width: 40px;
   height: auto;
 }
 
@@ -144,10 +144,9 @@ div.star-holder{
   text-align: center; 
 }
 
-
-div.star-holder:hover{
-    background-color: red;
-  }
+div.hoot-count{
+  font-size: 9pt;
+}
 
 li.hoot {
   background-color: #b4e9ff; 
@@ -163,7 +162,7 @@ li.hoot a.title {
 
 li.hoot div.description {
   margin: 10px inherit;
-  font-family: Arial;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   font-size: 12pt;
 }
 
@@ -189,12 +188,16 @@ div.flash-notice, li.flash-error {
   color: white;
 }
 
-p.new-hoot-field{
-  padding: 2px;
+p.sign-up {
+  padding: 7px;
+}
+
+p.sign-up input {
+  font-size: 12pt;
 }
 
 footer {
-	font-family: Arial;
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 	font-size: 12pt;
   display: flex;
   background-color: white;

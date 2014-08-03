@@ -1,17 +1,16 @@
-<div id='hoot-daddy' class='container'>
+<div class='container hoot-daddy'>
 	<header class='container-header'>&#9608Hoot Daddy</header>
 	<ul>
 			<%= partial :hoot, :locals => {:hoot => @hoot} %>
 	</ul>
-</div>
-
-<div id='hoot-em-backs' class='container'>
-	<header class='container-header'>&#9608Hoot 'Em Backs</header>
-	<ul>
-		<% @replies.each do |reply| %>
-			<%= partial :reply, :locals => {:reply => reply} %>
-		<% end %>
-	</ul>
+	<div class='container hoot-em-backs'>
+		<header class='container-header'>&#9608Hoot 'Em Backs</header>
+		<ul>
+			<% @replies.each do |reply| %>
+				<%= partial :reply, :locals => {:reply => reply} %>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
 <%= partial :hoot_em_back %>

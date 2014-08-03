@@ -1,11 +1,13 @@
 <div id='sign-up-form' class='container'>
-	<header class='container-header'>Please sign up</header>
+	<header class='container-header'>&#9608 Please sign up</header>
 	<form class='standard' action='/users' method='post'>
-		Name:<input name='name' type='text' placeholder='Name'>
-		Username:<input name='username' type='text' placeholder='Username'>
-		Email:<input name='email' type ='text' placeholder='Email'>
-		Password:<input name='password' type='password' placeholder='Password'>
-		Confirm Password: <input name='password_confirmation' type='password' placeholder='Password'>
-		<input class='button green' type='submit' value='Sign Up'>
+		<fieldset>
+			<p class='sign-up'><input name='name' type='text' placeholder='Name'></p>
+			<p class='sign-up'><input name='username' type='text' placeholder='Username'></p>
+			<p class='sign-up'><input name='email' type ='text' placeholder='Email'></p>
+			<p class='sign-up'><input name='password' type='password' placeholder='Password'></p>
+			<p class='sign-up'><input name='password_confirmation' type='password' placeholder='Confirm Password'></p>
+			<p class='sign-up'><input class='button green' type='submit' value='Sign Up'></p>
+		</fieldset>
 	</form>
 </div>
