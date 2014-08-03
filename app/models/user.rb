@@ -9,8 +9,8 @@ class User
 
 	validates_confirmation_of :password, :message => 'Sorry your passwords do not match'
 
-	has n, :reply
-	has n, :hoots, :through => :reply
+	has n, :replies
+	has n, :hoots, :through => :replies
 
 	property :id, 											Serial
 	property :name, 										Text

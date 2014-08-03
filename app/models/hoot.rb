@@ -3,8 +3,8 @@ class Hoot
 	include DataMapper::Resource
 
 	belongs_to :user
-	has n, :reply
-	has n, :users, :through => :reply
+	has n, :replies
+	has n, :users, :through => :replies
 
 	property 	:id, 				Serial
 	property 	:content, 	Text, :required => true, 

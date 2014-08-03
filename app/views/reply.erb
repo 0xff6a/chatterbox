@@ -1,0 +1,6 @@
+<li class='hoot'>	
+	<div class='description'><%= reply.content %></div>
+	<span class='source'>
+		<%= Time.parse(reply.timestamp).strftime("added at %I:%M%p on %d-%B-%Y by ") %> <%= "#{User.first(:id => reply.user_id).name} | #{User.first(:id => reply.user_id).username}" %>
+	</span>
+</li>

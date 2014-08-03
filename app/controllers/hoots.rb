@@ -9,3 +9,26 @@ post '/hoots' do
 	erb :'hoots/new'
 end
 
+post '/hoots/reply' do
+	# display hoot and associated replies
+	@hoot = Hoot.first(:id => params[:hoot_id])
+	@replies = @hoot.replies
+	# display hoot submit form
+	erb :'hoots/reply'
+end
+
+post '/hoots/reply/new' do
+	hoot = Hoot.first(:id => params[:hoot_id])
+	reply = Reply.create(	:hoot => hoot, 
+												:user => current_user,
+												:content => params[:content],
+												:timestamp => Time.now)
+	if reply.save
+		flash[:notice] ='You joined the Hootenany'
+		redirect('/')
+	else
+		flash[:errors] = reply.errors.full_messages
+		erb :'hoots/new'
+	end
+end
+
