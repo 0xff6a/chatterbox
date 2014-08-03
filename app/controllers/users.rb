@@ -6,11 +6,11 @@ get '/users/new' do
 end
 
 post '/users' do
-	@user = User.create(:name 									=> params[:name],
-											:username 							=> params[:username],
-											:email 									=> params[:email],
-											:password 							=> params[:password],
-											:password_confirmation 	=> params[:password_confirmation])
+	@user = create_user(params[:name],
+											params[:username], 
+											params[:email],
+											params[:password],
+											params[:password_confirmation])
 	@user.save ? onboard(@user) : retry_signup_for(@user)
 end
 
@@ -29,8 +29,7 @@ get '/users/reset_password/:token' do |token|
 	if @user && token_valid?(@user)
 		erb :'users/reset_password' 
 	else
-		flash[:errors] = ['Invalid Token']
-		redirect to('/')
+		invalid_token_message
 	end
 end
 

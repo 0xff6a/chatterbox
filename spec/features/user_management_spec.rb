@@ -2,6 +2,8 @@ require 'helpers/general'
 
 feature 'User signs up' do
 
+	before(:each) { allow(Mailer).to receive(:send_message)	}
+
 	scenario 'while being logged out' do
 		expect(Mailer).to receive(:send_message)
 		sign_up('test', 'test', 'test@test.com', '1234', '1234')

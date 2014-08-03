@@ -1,5 +1,13 @@
 helpers do
 
+	def create_user(name, username, email, password, password_confirmation)
+			User.create(:name 									=> name,
+									:username 							=> username,
+									:email 									=> email,
+									:password 							=> password,
+									:password_confirmation 	=> password_confirmation)
+	end
+
 	def send_welcome_message_to(user)
 		Mailer.send_message(user.email, "Welcome to Chatterbox", 
 		"Hey Good Lookin',\n\nWelcome to the Chatterbox. Get hootin'\n\nAll the best,\n\nThe Team")

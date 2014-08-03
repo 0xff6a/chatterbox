@@ -7,8 +7,8 @@ class Hoot
 	has n, :users, :through => :replies
 
 	property 	:id, 				Serial
-	property 	:content, 	Text, :required => true, 
-															:message => 'You must hoot something'
+	property 	:content, 	Text, 	:required => true, 
+																:message => 'You must hoot something'
 	property 	:timestamp, String
 
 end

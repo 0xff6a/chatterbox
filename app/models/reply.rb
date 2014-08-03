@@ -6,8 +6,8 @@ class Reply
 	belongs_to :hoot
 
 	property :id, 			Serial
-	property :content, 	Text, 	:required => true, 
-															:message => 'You must hoot em back with something'
+	property :content, 	Text, 		:required => true, 
+																:message => 'You must hoot em back with something'
 	property 	:timestamp, String
 	
 end
