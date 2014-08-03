@@ -1,3 +1,5 @@
+require './spec/helpers/general'
+
 describe Hoot do
 	
 	before(:each) { create_test_user }
@@ -23,10 +25,6 @@ describe Hoot do
 		expect(Hoot.count).to eq(0)
 		Hoot.create(:content => 'Hello', :user_id => user.id)
 		expect(Hoot.count).to eq(1)
-	end
-
-	def hoot
-		Hoot.first
 	end
 
 end

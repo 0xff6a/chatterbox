@@ -8,7 +8,7 @@ feature 'Posting hoots' do
 	end
 	
 	scenario 'while browsing the homepage' do
-		hoot('Yay coding')
+		create_hoot('Yay coding')
 		expect(Hoot.first.content).to eq('Yay coding')
 		expect(page).to have_content('Yay coding')
 		expect(page).to have_content(user.username)
@@ -16,7 +16,7 @@ feature 'Posting hoots' do
 	end
 	
 	scenario 'without content' do
-		hoot('')
+		create_hoot('')
 		expect(Hoot.count).to eq(0)
 		expect(page).to have_content('You must hoot something')
 	end
@@ -28,8 +28,8 @@ feature 'Viewing a list of hoots' do
 	before(:each) do
 		create_test_user
 		sign_in_test_user		
-		hoot('Hoot Hoot')
-		hoot('Woot Woot')
+		create_hoot('Hoot Hoot')
+		create_hoot('Woot Woot')
 	end
 
 	scenario 'while browsing the homepage' do

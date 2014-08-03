@@ -10,6 +10,14 @@ def user
 	User.first
 end
 
+def hoot
+	Hoot.first
+end
+
+def reply
+	Reply.first
+end
+
 def sign_up(name, username, email, password, password_confirmation)
 	visit '/users/new'
 	within '#sign-up-form' do
@@ -34,26 +42,26 @@ def sign_in_test_user
 end
 
 def request_password_reset_for(username)
-		visit '/sessions/new'
-		click_link('Forgotten password?')
-		fill_in 'username', :with => username
-		click_button('Reset')
+	visit '/sessions/new'
+	click_link('Forgotten password?')
+	fill_in 'username', :with => username
+	click_button('Reset')
 end
 
 def set_new_password(token)
-		visit "/users/reset_password/#{token}"
-		fill_in 'new_password', :with => 'new'
-		fill_in 'new_password_confirmation', :with => 'new'
-		click_button 'Reset'
+	visit "/users/reset_password/#{token}"
+	fill_in 'new_password', :with => 'new'
+	fill_in 'new_password_confirmation', :with => 'new'
+	click_button 'Reset'
 end
 
-def hoot(content)
+def create_hoot(content)
 	click_on 'Hoot'
 	fill_in 'content', :with => content
 	click_on 'Hoot Away'
 end
 
-def hoot_em_back(content)
+def create_hoot_em_back(content)
 	visit('/')
 	click_button 'reply'
 	fill_in 'content', :with => content
