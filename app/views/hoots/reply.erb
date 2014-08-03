@@ -1,12 +1,11 @@
-<div class='container'>
+<div id='hoot-daddy' class='container'>
 	<header class='container-header'>&#9608Hoot Daddy</header>
 	<ul>
 			<%= partial :hoot, :locals => {:hoot => @hoot} %>
 	</ul>
 </div>
 
-
-<div class='container'>
+<div id='hoot-em-backs' class='container'>
 	<header class='container-header'>&#9608Hoot 'Em Backs</header>
 	<ul>
 		<% @replies.each do |reply| %>
@@ -15,11 +14,4 @@
 	</ul>
 </div>
 
-<div class='container' id ='new-hoot'>
-	<header class='container-header'>&#9608Hoot 'Em Back</header>
-	<form class='standard' action ='/hoots/reply/new' method='post'>
-		<input type='hidden' name='hoot_id' value=<%=@hoot.id %>>
-		<p class='new-hoot-field'>Hoot 'Em Back: <input class='url-input' type='text' name='content' placeholder='hoot away...'></p>
-		<p class='new-hoot-field'><input class='button green' type='submit' value="Hoot 'Em Back"></p>
-	</form>
-</div>
+<%= partial :hoot_em_back %>

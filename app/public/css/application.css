@@ -52,7 +52,7 @@ input.button.green {
 
 a.button, input.button {
   display: inline-block; 
-  width: 100px;
+  width: 120px;
   background-color: #ff3d64;
   border: 2px solid white;
   color: white; 

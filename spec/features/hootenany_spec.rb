@@ -18,14 +18,26 @@ feature 'Replying to hoots' do
 		expect(user.replies.first.content).to eq('reply')
 	end
 
-	# scenario 'navigating to a favourites page' do
-	# 	# visit('/')
-	# 	# click_button 'fav'
-	# 	# add_link('http://www.notfav.com', 'Not Fav', ['test'], 'testing')
-	# 	# visit('/')
-	# 	# click_on 'profile-button'
-	# 	# expect(page).to have_content('Test')
-	# 	# expect(page).not_to have_content('Not Fav')
-	# end
+	scenario 'navigating to the hootenannies page' do
+		visit('/')
+		click_button 'reply'
+		expect(page).to have_content("Hoot 'Em Backs")
+		fill_in 'content', :with => 'reply'
+		click_on "Hoot 'Em Back"
+
+		visit('/')
+		click_on 'profile-button'
+		
+		within '#hoot-daddy' do
+			expect(page).to have_content('Hoot Daddy')
+			expect(page).to have_content('test hoot')
+		end
+
+		within '#hoot-em-backs' do
+			expect(page).to have_content("Hoot 'Em Backs")
+			expect(page).to have_content('reply')
+		end
+
+	end
 
 end

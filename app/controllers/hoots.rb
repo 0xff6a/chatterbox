@@ -12,7 +12,7 @@ end
 post '/hoots/reply' do
 	# display hoot and associated replies
 	@hoot = Hoot.first(:id => params[:hoot_id])
-	@replies = @hoot.replies
+	@replies = @hoot.replies.all(:order => [ :timestamp.desc ])
 	# display hoot submit form
 	erb :'hoots/reply'
 end
