@@ -1,8 +1,18 @@
 Week 6 Challenge @ Makers Academy
 =================================
 
+Chatterbox - a twitter clone that will allow the users to post messages to a public stream. Hosted on Heroku @ http://fast-wave-2933.herokuapp.com/
 
-Chatterbox - a twitter clone that will allow the users to post messages to a public stream.
+Ruby Version
+------------
+Ruby 2.1.2
+
+Technologies used:
+------------------
+- Sinatra
+- Postgres SQL and Datamapper ORM
+- Bcrypt
+- Rspec and Capybara for testing
 
 Features:
 ---------
@@ -17,10 +27,13 @@ Features:
  - Each user can access their Hootenannies page that shows them all hoots they have been active in (either hoots or hoot 'em backs')
  - If a user forgets their password they can request for it to be reset through their registered email account
 
- Live
- -----
+Running the application:
+------------------------
+$ rackup from root will open app on port 9292
 
- Hosted on Heroku at http://fast-wave-2933.herokuapp.com/
+Running the test suite:
+-----------------------
+$ rspec from root
 
 
 
